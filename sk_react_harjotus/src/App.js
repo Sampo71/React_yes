@@ -1,13 +1,21 @@
 import React from "react";
 import { Message } from "./pages/Message";
 import { Buttons } from "./pages/Buttons";
+import { BrowserRoute, Routes, Route, BrowserRouter } from "react-router-dom";
+import { Router } from "./pages/Router";
 
 function App() {
   return (
+    <BrowserRouter>
     <div>
-      <Message />
-      <Buttons />
+      <Routes>
+        <Route path='/' element={<Router/>}>
+          <Route index element={<Message/>}/>
+          <Route path="Buttons" element={<Buttons/>}/>
+        </Route>
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
