@@ -21,9 +21,9 @@ export const Buttons = () =>{
 
     return(
         <div>
-            <button onClick={countClicks}>bread given {count} times!</button>
-            <button onClick={countClicks2}>water given {count2} times!</button>
-            <button onClick={resetClicks}>steal food</button>
+            <button onClick={countClicks}>Grains of rice given {count} times!</button>
+            <button onClick={countClicks2}>Water drops given {count2} times!</button>
+            <button onClick={resetClicks}>Steal food</button>
         </div>
     );
 }
