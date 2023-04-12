@@ -1,0 +1,36 @@
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+    color:aquamarine;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    font-size: 40px;
+}
+
+.b-bottom-r{
+    border-right: 7px solid black;
+    border-bottom: 7px solid black;
+}
+
+.b-botttom{
+    border-bottom: 7px solid black;
+}
+
+.b-right{
+    border-right: 7px solid black;
+}
+
+
+
+
+
+
+
+
