@@ -7,7 +7,7 @@ export const Buttons = () =>{
     const[count2, setCount2,] = useState(0);
 
     function countClicks(){
-        setCount(count +1);
+        setCount(count +100);
     }
 
     function resetClicks(){
@@ -16,7 +16,7 @@ export const Buttons = () =>{
     }
 
     function countClicks2(){
-        setCount2(count2 +1)
+        setCount2(count2 +100)
     }
 
     return(
