@@ -43,6 +43,19 @@
     font-size: 20px;
 }
 
-
+.scoreboard{
+    height:30px;
+    width:26.2%;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    background-color: rgb(255, 255, 0);
+    border:1px solid black;
+    font-weight: bold;
+    margin: 0.5% 0% 1% 0%;
+    padding: 1% 0% 1% 0%;
+    border-radius: 5px;
+}
 
 

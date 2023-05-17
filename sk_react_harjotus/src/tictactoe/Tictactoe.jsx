@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import './Tictactoe.css'
 import { Board } from "./Board";
 import { useState } from "react";
+import {Scoreboard} from "./Scoreboard";
 
 
 const initialBoard=['','','','','','','','',''];
@@ -10,6 +11,7 @@ export const TicTacToe =()=>{
     const[gameState, setGameState]= useState(initialBoard);
     const[isXTurn, setIsXTurn] = useState(true);
     const[status, setStatus] = useState('');
+    const[scores, setScores] = useState({xScore: 0, oScore: 0});
 
     useEffect(() =>{
        const winner = checkWinner();
@@ -22,6 +24,15 @@ export const TicTacToe =()=>{
         }
       },[gameState])
     
+      useEffect(()=>{
+          const winner = checkWinner();
+          if(winner === null){
+            return;
+          }
+          if(winner === "X"){
+             setScores({xScore: scores.xScore + 1, oScore: scores.oScore})
+          }else{setScores({xScore: scores.xScore, oScore: scores.oScore + 1})}
+      },[status])
 
     const onSquareClick =(index)=>{
         let strings = Array.from(gameState);
@@ -56,6 +67,12 @@ export const TicTacToe =()=>{
        return null;
    }
 
+   function clearScoreboard(){
+    setScores({xScore: 0, oScore: 0});
+    setGameState(initialBoard);
+    setIsXTurn(true);
+   }
+
     return(
         <div>
             <div className="game">
@@ -65,11 +82,13 @@ export const TicTacToe =()=>{
                 <>
                    <span>{status}</span>
                    <button style={{background:"red"}} onClick ={()=>{
-                    setGameState(initialBoard);
-                    setIsXTurn(true);
-                   }}>Clear board</button>
+                       setGameState(initialBoard);
+                       setIsXTurn(true);
+                    }}>Clear board</button>
                </>
             )}
+            <Scoreboard scores={scores}/>
+            <button onClick={clearScoreboard}>Clear scoreboard</button>
                   {status.includes("Winner") &&(
                 <>
                    <span style={{color:"green"}}>{status}</span>
